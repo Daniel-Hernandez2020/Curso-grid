@@ -1,0 +1,89 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+
+  a[href="#top"] {
+    margin: 1rem;
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: 50vh;
+    text-align: center;
+  }
+
+  img {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menu {
+    margin-bottom: 100vh;
+    font-size: 125%;
+  }
+
+  .menu li {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 80%;
+    height: 80vh;
+    background-color: #222;
+    border: medium solid #000;
+  }
+
+  .item {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #666;
+    border: medium solid #999;
+  }
+
+  .grid-line-names{
+
+    display: grid;
+    /*Grid de 3cx3r*/
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+
+    grid-template-columns: [linea-c1] 1fr [linea-c2] 1fr [linea-c3] 1fr [linea-c4];
+    grid-template-rows: [linea-r1] 1fr [linea-r2] 1fr [linea-r3] 1fr [linea-r4];
+
+    /*con auto la grid recalcula para que todas las filas y columna tenga el mismo espacio*/
+    grid-template-columns: [linea-c1] auto [linea-c2] auto [linea-c3] auto [linea-c4];
+    grid-template-rows: [linea-r1] auto [linea-r2] auto [linea-r3] auto [linea-r4];
+
+  } 
+
+  .grid-line-names .item:nth-child(3){
+
+    color: cyan;
+    grid-row: linea-r3 / linea-r4;
+    grid-column: linea-c1 / linea-c4;
+
+    /*grid-area: linea-r3 / linea-r4 linea-c1 / linea-c4 */ /*grid-area no funciona con nombres*/
+
+    
+
+
+  }
