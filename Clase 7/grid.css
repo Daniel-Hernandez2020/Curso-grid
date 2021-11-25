@@ -46,7 +46,7 @@ html {
 
   .container {
     margin: 0 auto;
-    width: 40%;
+    width: 80%;
     height: 80vh;
     background-color: #222;
     border: medium solid #000;
@@ -97,14 +97,22 @@ html {
 
   }
 
-  /*Display grid implicit lo que hace es dar un tamaño por defecto a aquellos elementos que
-   no que no esten  comtemplados en la definicion de la grid, cuando usamos grid-template-columns y rows*/
   .grid-implicit{
     /*Grid 4cx3r*/
-    display: grid; /*De forma implicita estas aplicando el modelo de bloque con el de grid*/
-    display: inline-grid;/*Se mantiene el layout tipo grid pero se comporta de forma externa como de linea*/
+    display: grid;
+    display: inline-grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 200px);
+
+
+  }
+
+  .grid-flow{
+    display: grid;
+    /*Grid de 5cx4r*/
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 150px);
+
 
 
   }
