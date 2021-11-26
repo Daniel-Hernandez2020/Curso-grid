@@ -1,0 +1,164 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+
+  a[href="#top"] {
+    margin: 1rem;
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: 50vh;
+    text-align: center;
+  }
+
+  img {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menu {
+    margin-bottom: 100vh;
+    font-size: 125%;
+  }
+
+  .menu li {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 80%;
+    height: 80vh;
+    background-color: #222;
+    border: medium solid #000;
+  }
+
+  .item {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #666;
+    border: medium solid #999;
+  }
+
+  
+  .grid-areas{
+
+    display: grid;
+    /*Grid de 2cx3r */
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: 100px repeat(2, 1fr) 60px;
+    grid-template-areas: 
+    "header header"
+    "content sidebar"
+    "content ."
+    "footer footer";
+  }
+
+  .header{
+
+    grid-area: header;
+
+  }
+
+  .content{
+
+    grid-area: content;
+
+  }
+
+  .sidebar{
+
+    grid-area: sidebar;
+
+  }
+
+  .footer{
+
+    grid-area: footer;
+
+  }
+
+  .grid-implicit{
+    /*Grid 4cx3r*/
+    display: grid;
+    display: inline-grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+
+
+  }
+
+  .grid-flow{
+    display: grid;
+    /*Grid de 5cx3r*/
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 150px);
+
+    /*Propiedad que determina el flujo que va a seguir la cuadricula
+      row - es el valor por defecto*/
+    grid-auto-flow: row;
+
+    /*grid-auto-flow: column; */ /*Se generan columnas implicitas*/
+
+    /*Esta propiedad determina el tamoño de las celdas que no son parte del
+    grid implicit con auto ocupan todo el tamaño disponible*/
+    /*grid-auto-rows: auto;*/
+
+    /*Se le puede dar un tamaño es especifico a todas las filas que se generen implicita
+    mente*/
+    grid-auto-rows: 100px; /**/
+
+    grid-auto-flow: column;
+
+    grid-auto-columns: 50px;
+
+  }
+
+  .grid-flow-dense{
+
+    display: grid;
+    /*Grid de 5cx4r*/
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 200px);
+
+    /*Agregando "dense" aprovechamos los espacios vacios*/
+    grid-auto-flow: column dense;
+
+
+  }
+
+  /*.grid-flow-dense .item:nth-child(9){
+
+    color: cyan;
+    grid-row: span 3;
+    grid-column: span 3;
+
+
+  }*/
+
+  .grid-flow-dense .item:nth-child(11){
+
+    color: cyan;
+    grid-row: span 3;
+    grid-column: span 3;
+
+  }
