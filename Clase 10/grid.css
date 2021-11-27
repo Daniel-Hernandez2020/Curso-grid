@@ -1,0 +1,164 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+
+  a[href="#top"] {
+    margin: 1rem;
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: 50vh;
+    text-align: center;
+  }
+
+  img {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menu {
+    margin-bottom: 100vh;
+    font-size: 125%;
+  }
+
+  .menu li {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 80%;
+    height: 80vh;
+    background-color: #222;
+    border: medium solid #000;
+  }
+
+  .item {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #666;
+    border: medium solid #999;
+  }
+
+  
+  .grid-areas{
+
+    display: grid;
+    /*Grid de 2cx3r */
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: 100px repeat(2, 1fr) 60px;
+    grid-template-areas: 
+    "header header"
+    "content sidebar"
+    "content ."
+    "footer footer";
+  }
+
+  .header{
+
+    grid-area: header;
+
+  }
+
+  .content{
+
+    grid-area: content;
+
+  }
+
+  .sidebar{
+
+    grid-area: sidebar;
+
+  }
+
+  .footer{
+
+    grid-area: footer;
+
+  }
+
+  .grid-order{
+
+    display: grid;
+    /*Grid de 3cx2r*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-auto-flow: column;
+
+  }
+
+  .grid-order .item:nth-child(1){
+
+    /*Valor por default es 0, acepta valores negativos y positivos
+    entre mas grande sea el numero estara mas al final*/
+    order: 1; /*La propiedad order funciona cuando el flujo de la grid es el natura o
+                por defecto, con grid-auto-flow: row y column*/
+
+  }
+
+  .grid-order .item:nth-child(2){
+
+    order: 2;
+
+  }
+
+  .grid-order .item:nth-child(5){
+
+    order: -1;
+
+  }
+
+
+  .grid-align{
+
+    display: grid;
+    /*3cx2r*/
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(2, 200px);
+
+    justify-items: stretch;/*Valor por defecto, si tienen un tamaño especificado, toma ese tamaño*/
+
+    /*justify-item alinea mis elementos grid en el eje x*/
+    justify-items: start;
+
+    justify-items: end;
+    justify-items: center;
+
+  /*align-items alinea mis elementos grid en el eje Y*/
+    align-items: stretch;
+    align-items: start;
+    align-items: center;
+    align-items: end;
+  }
+
+
+  /*Alinear solo un item*/
+  .grid-align .item:nth-child(4){
+
+    justify-self: start;
+    align-self: start;
+
+  }
+
+
+  
